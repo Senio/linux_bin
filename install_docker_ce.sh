@@ -1,4 +1,6 @@
 #!/bin/bash
+#https://docs.docker.com/compose/install/
+
 yum remove docker \
   docker-common \
   container-selinux \
