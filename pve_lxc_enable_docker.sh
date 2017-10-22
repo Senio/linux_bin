@@ -19,8 +19,7 @@ echo_to_file() {
       grep "$1" $2 > /dev/null 2>&1
       #grep "linux" README.md
       if [ $? -ne 0 ]; then
-        echo ''
-        echo '    modify '$lxc_path
+        #echo '    modify '$lxc_path
         echo '    add "'$1'" to '$2
         echo "$1" >> $2
       else
@@ -51,4 +50,5 @@ if [ $? -eq 0 ]; then
   echo_to_file "lxc.aa_profile: unconfined" $lxc_path
   echo_to_file "lxc.cgroup.devices.allow: a" $lxc_path
   echo_to_file "lxc.cap.drop:" $lxc_path
+  echo ''
 fi
