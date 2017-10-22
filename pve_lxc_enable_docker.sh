@@ -21,7 +21,7 @@ echo_to_file() {
       if [ $? -ne 0 ]; then
         echo ''
         echo '    modify '$lxc_path
-        echo 'add "'$1'" to '$2
+        echo '    add "'$1'" to '$2
         echo "$1" >> $2
       fi
     fi
@@ -43,7 +43,7 @@ lxc_path="/etc/pve/lxc/$1.conf"
 check_file_exist $lxc_path
 #check_file_exist "./README.md"
 if [ $? -eq 0 ]; then
-  echo 'go'
+  echo '    '$lxc_path' exist'
   #echo_to_file "linux" README.md
   echo_to_file "#insert docker part below" $lxc_path
   echo_to_file "lxc.aa_profile: unconfined" $lxc_path
