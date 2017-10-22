@@ -23,6 +23,8 @@ echo_to_file() {
         echo '    modify '$lxc_path
         echo '    add "'$1'" to '$2
         echo "$1" >> $2
+      else
+        echo '    already have '$1
       fi
     fi
   fi
