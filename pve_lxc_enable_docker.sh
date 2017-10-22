@@ -11,12 +11,7 @@ echo_to_file() {
     #check file exist?
     if [ ! -f $2 ]; then
       echo ''
-      echo '    '$2' not found'
-      echo ''
     else
-      echo ''
-      echo '    modify '$lxc_path
-
       #echo $1 $2
       #shell="grep \"$1\" $2"
       #echo $shell
@@ -24,18 +19,34 @@ echo_to_file() {
       grep "$1" $2
       #grep "linux" README.md
       if [ $? -ne 0 ]; then
+        echo ''
+        echo '    modify '$lxc_path
         echo 'add "'$1'" to '$2
         echo "$1" >> $2
       fi
     fi
   fi
+}
 
+check_file_exist() {
+  if [ ! -f $1 ]; then
+    echo ''
+    echo '    '$1' not found'
+    echo ''
+    return 1
+  else
+    return 0
+  fi
 }
 
 lxc_path="/etc/pve/lxc/$1.conf"
-
-#echo_to_file "linux" README.md
-echo_to_file "#insert docker part below" $lxc_path
-echo_to_file "lxc.aa_profile: unconfined" $lxc_path
-echo_to_file "lxc.cgroup.devices.allow: a" $lxc_path
-echo_to_file "lxc.cap.drop:" $lxc_path
+check_file_exist $lxc_path
+#check_file_exist "./README.md"
+if [ $? -eq 0 ]; then
+  echo 'go'
+  #echo_to_file "linux" README.md
+  echo_to_file "#insert docker part below" $lxc_path
+  echo_to_file "lxc.aa_profile: unconfined" $lxc_path
+  echo_to_file "lxc.cgroup.devices.allow: a" $lxc_path
+  echo_to_file "lxc.cap.drop:" $lxc_path
+fi
