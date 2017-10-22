@@ -16,7 +16,7 @@ echo_to_file() {
       #shell="grep \"$1\" $2"
       #echo $shell
       #$shell
-      grep "$1" $2 > /dev/null 2>&1 &
+      grep "$1" $2 > /dev/null 2>&1
       #grep "linux" README.md
       if [ $? -ne 0 ]; then
         echo ''
