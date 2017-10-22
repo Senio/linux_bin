@@ -11,12 +11,11 @@ echo_to_file() {
     #check file exist?
     if [ ! -f $2 ]; then
       echo ''
-      echo '   '$2' not found'
+      echo '    '$2' not found'
       echo ''
     else
       echo ''
-      echo $lxc_path
-      echo ''
+      echo '    modify '$lxc_path
 
       #echo $1 $2
       #shell="grep \"$1\" $2"
