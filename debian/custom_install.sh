@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sh ./debian_lxc_upgrade.sh
-sh ./debian_install_docker_ce.sh
-sh ./debian_install_tmux.sh
-sh ./debian_install_ohmyzsh.sh
+sh ./lxc_upgrade.sh
+sh ./install_docker_ce.sh
+sh ./install_tmux.sh
+sh ./install_ohmyzsh.sh
 
 apt install -y pydf
