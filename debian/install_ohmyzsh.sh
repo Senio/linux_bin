@@ -6,4 +6,4 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 
 sed -i "s/robbyrussell/agnoster/g" ~/.zshrc
 
-dpkg-reconfigure locales
+#dpkg-reconfigure locales
