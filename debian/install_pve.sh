@@ -6,11 +6,11 @@ wget http://download.proxmox.com/debian/proxmox-ve-release-5.x.gpg -O /etc/apt/t
 
 apt update && apt dist-upgrade -y
 
-apt install proxmox-ve postfix open-iscsi zfsutils-linux parted -y
+apt install proxmox-ve postfix open-iscsi zfsutils-linux parted ksmtuned -y
 
 apt remove os-prober -y
-
-apt install ksmtuned -y
+apt purge $(dpkg -l | grep linux-image | awk '{print $2}' | xargs) -y
+update-grub
 
 # modify /usr/share/pve-manager/js/pvemanagerlib.js
 # if (data.status !== 'Active') {  >> if (false) {
