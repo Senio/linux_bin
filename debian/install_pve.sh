@@ -8,7 +8,9 @@ apt update && apt dist-upgrade -y
 
 apt install proxmox-ve postfix open-iscsi zfsutils-linux parted -y
 
-apt remove os-prober
+apt remove os-prober -y
+
+apt install ksmtuned -y
 
 # modify /usr/share/pve-manager/js/pvemanagerlib.js
 # if (data.status !== 'Active') {  >> if (false) {
