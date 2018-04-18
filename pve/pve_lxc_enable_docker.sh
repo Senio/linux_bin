@@ -47,7 +47,12 @@ if [ $? -eq 0 ]; then
   echo '    '$lxc_path' exist'
   #echo_to_file "linux" README.md
   echo_to_file "#insert docker part below" $lxc_path
+
+  #LXC 2.1
   echo_to_file "lxc.aa_profile: unconfined" $lxc_path
+  #LXC 3.0
+  echo_to_file "lxc.apparmor.profile: unconfined" $lxc_path
+
   echo_to_file "lxc.cgroup.devices.allow: a" $lxc_path
   echo_to_file "lxc.cap.drop:" $lxc_path
   echo ''
