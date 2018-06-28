@@ -33,6 +33,7 @@ sudo apt-get install docker-ce -y
 #curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 # sudo apt-get install docker-compose -y
 
+# https://docs.docker.com/compose/install/#install-compose
 sudo apt purge docker-compose -y
 rm -f /usr/local/bin/docker-compose
 sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
