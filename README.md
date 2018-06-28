@@ -1,1 +1,2 @@
-# linux_bin
+# How to use
+
