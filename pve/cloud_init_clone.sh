@@ -8,11 +8,12 @@ if [ $1 ] ; then
   dns="10.32.14.254"
 
   qm clone 9999 $vmid --name $hostname
-  qm resize $vmid virtio0 16G;
+  qm resize $vmid scsi0 16G;
   qm set $vmid --ipconfig0 ip=$ip,gw=$gw --nameserver $dns
   qm set $vmid --sshkey ~/.ssh/authorized_keys
-  qm set $vimd --ciuser=senio
-  qm set $vimd --cipassword=a@123456
+  qm set $vmid --ciuser=senio
+  qm set $vmid --cipassword=a@123456
+  qm start $vmid
 else
 
   echo 'vmid=$1'
