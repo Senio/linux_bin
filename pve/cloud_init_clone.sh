@@ -10,7 +10,7 @@ if [ $1 ] ; then
   qm clone 9999 $vmid --name $hostname
   qm resize $vmid scsi0 16G;
   qm set $vmid --ipconfig0 ip=$ip,gw=$gw --nameserver $dns
-  qm set $vmid --sshkey ~/.ssh/authorized_keys
+  qm set $vmid --sshkey ~/.ssh/cloud_init_rsa.pub
   qm set $vmid --ciuser=senio
   qm set $vmid --cipassword=a@123456
   qm start $vmid
