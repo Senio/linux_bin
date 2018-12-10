@@ -2,8 +2,6 @@
 
 apt install cloud-init -y
 
-vmid="1001"
-
 # download the image
 wget https://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img
 
@@ -22,8 +20,4 @@ qm set 9999 --scsihw virtio-scsi-pci --scsi0 zfs_hdd_z2:vm-9999-disk-0
 qm set 9999 --ide2 zfs_hdd_z2:cloudinit --boot c --bootdisk virtio0 --serial0 socket
 
 qm template 9999
-qm clone 9999 $vmid --name ubuntu1604-1
-qm resize $vmid virtio0 16G;
-qm set $vmid --ipconfig0 ip=10.32.14.162/24,gw=10.32.14.254 --nameserver '10.32.14.254'
 
-qm set $vmid --sshkey ~/.ssh/authorized_keys
