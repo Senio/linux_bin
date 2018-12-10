@@ -6,4 +6,7 @@ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install
 
 sed -i "s/robbyrussell/agnoster/g" ~/.zshrc
 
+# Change your default shell
+# chsh -s /bin/zsh
+
 sudo dpkg-reconfigure locales
