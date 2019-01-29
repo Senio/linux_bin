@@ -1,8 +1,8 @@
 #!/bin/sh
 
-if [ $1 ] ; then
-  vmid=$1
-  hostname="rails"
+if [ $1 ] && [ $2 ] ; then
+  hostname=$1
+  vmid=$2
   ip="10.32.14.$vmid/24"
   gw=10.32.14.254
   dns="10.32.14.254"
@@ -16,7 +16,8 @@ if [ $1 ] ; then
   qm start $vmid
 else
 
-  echo 'vmid=$1'
+  echo 'hostname=$1'
+  echo 'vmid=$2'
 
 fi
 
