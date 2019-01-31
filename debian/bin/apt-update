@@ -1,0 +1,3 @@
+#!/bin/sh
+
+apt update && apt autoclean && apt upgrade --download-only -y
