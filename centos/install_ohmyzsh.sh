@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yum install -y zsh
+yum install -y zsh wget
 
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
