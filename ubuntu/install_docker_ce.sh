@@ -4,11 +4,11 @@
 sudo apt-get update
 
 sudo apt-get -y install \
-     apt-transport-https \
-     ca-certificates \
-     curl \
-     gnupg2 \
-     software-properties-common
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
 
 #curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | apt-key add -
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -25,7 +25,7 @@ sudo add-apt-repository \
 
 sudo apt-get update
 
-sudo apt-get install docker-ce -y
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 
 sudo usermod -a -G docker senio
 
