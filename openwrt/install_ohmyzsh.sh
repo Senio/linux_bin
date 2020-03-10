@@ -6,3 +6,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 sed -i "s/robbyrussell/agnoster/g" ~/.zshrc
 
+# sed -i -- 's:/bin/ash:/usr/bin/zsh:g' /etc/passwd
+
