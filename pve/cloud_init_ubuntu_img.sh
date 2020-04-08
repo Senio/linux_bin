@@ -1,7 +1,7 @@
 #!/bin/sh
 
 vmid=$1
-stor="zfs_ssd_z2"
+stor="zfs_ssd_z0"
 
 apt install cloud-init -y
 
