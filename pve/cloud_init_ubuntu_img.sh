@@ -1,7 +1,7 @@
 #!/bin/sh
 
 vmid=$1
-stor="zfs_hdd_z2"
+stor="zfs_ssd_z2"
 
 apt install cloud-init -y
 
@@ -16,8 +16,8 @@ qm create $vmid --cpu cputype=host --sockets 2 --cores 4 --memory 8192 --net0 vi
 
 # import the downloaded disk to local-lvm storage
 # qm importdisk 9000 bionic-server-cloudimg-amd64.img local-lvm
-# qm importdisk $vmid bionic-server-cloudimg-amd64.img $stor
-qm importdisk $vmid focal-server-cloudimg-amd64.img $stor
+qm importdisk $vmid bionic-server-cloudimg-amd64.img $stor
+# qm importdisk $vmid focal-server-cloudimg-amd64.img $stor
 
 # finally attach the new disk to the VM as scsi drive
 # qm set 9000 --scsihw virtio-scsi-pci --scsi0 local-lvm:vm-9000-disk-1
