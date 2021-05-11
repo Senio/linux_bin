@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update
-sudo apt install zsh powerline -y
+sudo apt install zsh powerline wget -y
 
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
