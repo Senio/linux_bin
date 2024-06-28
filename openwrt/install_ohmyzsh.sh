@@ -1,6 +1,7 @@
 #!/bin/sh
 
-opkg update && opkg install ca-certificates zsh curl git-http
+# opkg update && opkg install ca-certificates zsh curl git-http
+opkg update && opkg install zsh curl git-http
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
