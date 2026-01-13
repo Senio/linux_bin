@@ -19,6 +19,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 sudo usermod -a -G docker az-senio
 
+sudo usermod -a -G docker senio
+
 #https://docs.docker.com/engine/installation/linux/docker-ce/debian/
 
 # sudo apt-get update
